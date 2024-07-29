@@ -1,0 +1,106 @@
+{
+  "signUpUsers": [
+    {
+      "id": "b4b8",
+      "fullname": "Satya Sai Praneeth",
+      "email": "satya@gmail.com",
+      "password": "11111111",
+      "mobilenumber": ""
+    },
+    {
+      "id": "7f99",
+      "fullname": "sai",
+      "email": "sai@",
+      "password": "11",
+      "mobilenumber": 98798
+    },
+    {
+      "id": "04c5",
+      "fullname": "sanjay",
+      "email": "sanjay@gmail.com",
+      "password": "password",
+      "mobilenumber": 1234567892
+    },
+    {
+      "id": "7d26",
+      "fullname": "praneeth",
+      "email": "4883478347",
+      "password": "fhisdfhbhb",
+      "mobilenumber": 8557575785
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "name": "Sanjay ",
+      "module": "Angular",
+      "email": "sanjay@gmail.com",
+      "mobile": "8708269787",
+      "salary": "45000"
+    },
+    {
+      "id": 2,
+      "name": "Govind",
+      "module": "Angular",
+      "email": "govind@gmail.com",
+      "mobile": "8874561214",
+      "salary": "15000"
+    },
+    {
+      "id": 3,
+      "name": "Achyut",
+      "module": "Angular",
+      "email": "achyut@gmail.com",
+      "mobile": "8707812541",
+      "salary": "15000"
+    },
+    {
+      "id": 4,
+      "name": "Satya Sai Praneeth",
+      "module": "Angular",
+      "email": "satya@gmail.com",
+      "mobile": "8555004757",
+      "salary": "15000"
+    },
+    {
+      "id": 5,
+      "name": "Shubham",
+      "module": ".NET",
+      "email": "shubham@gmail.com",
+      "mobile": "8996378683",
+      "salary": "50000"
+    },
+    {
+      "id": 6,
+      "name": "Kapil",
+      "module": "Angular",
+      "email": "kapil@gmail.com",
+      "mobile": "9594576798",
+      "salary": "35000"
+    },
+    {
+      "id": 7,
+      "name": "Vishal",
+      "module": "Angular",
+      "email": "vishal@gmail.com",
+      "mobile": "9735686586",
+      "salary": "35000"
+    },
+    {
+      "id": 8,
+      "name": "Uday",
+      "module": ".NET",
+      "email": "uday@gmail.com",
+      "mobile": "947893478",
+      "salary": "35000"
+    },
+    {
+      "id": 9,
+      "name": "Kajal",
+      "module": ".NET",
+      "email": "kajal@gmail.com",
+      "mobile": "9478793797",
+      "salary": "15000"
+    }
+  ]
+}

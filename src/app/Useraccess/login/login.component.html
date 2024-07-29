@@ -1,0 +1,44 @@
+<!-- <div class="container">
+    <h2 class="mt-3">Profile details</h2>
+    <form #form="ngForm" (ngSubmit)="onSubmit()">
+        <div class="mt-3">
+            <label class="form-label">Enter your Name</label>
+            <input type="text" id="personName" class="form-control" [(ngModel)]="personName" name="name">
+        </div>
+        <div class="mt-3">
+            <label class="form-label">Enter your Email Id</label>
+            <input type="email" id="personEmail" class="form-control" [(ngModel)]="personEmail" name="email">
+        </div>
+        <div class="mt-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div> -->
+
+<div class="col-md-6">
+    <div class="card form-container2 bold-input">
+        <div class="text-center">
+            <h1>Login</h1>
+            <h6>Please enter your Email and Password</h6>
+        </div>
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label ">Email Id</label>
+                <input type="email" class="form-control" autocomplete="off" formControlName="email" placeholder="Enter your email">
+                <span class="text-danger"
+                    *ngIf="myForm.controls['email'].dirty && myForm.hasError('required', 'email')">*Email Id is
+                    Required</span>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" autocomplete="off" formControlName="password" placeholder="Enter your password">
+                <span class="text-danger"
+                    *ngIf="myForm.controls['password'].dirty && myForm.hasError('required', 'password')">*Password is
+                    Required</span>
+
+            </div>
+            <button type="submit" class="btn btn-success mb-3" [disabled]="!myForm.valid">Login</button>
+        </form>
+        <a style="color: rgb(9, 184, 88);" routerLink="/signup">New User? Click here to Signup</a>
+    </div>
+</div>

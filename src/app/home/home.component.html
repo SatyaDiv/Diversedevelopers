@@ -1,0 +1,112 @@
+<nav class="navbar navbar-light navbar-custom">
+  <div class="container-fluid">
+    <h1 class="bold-input" style="color: red;">Diverse Developers</h1>
+    <div class="d-flex">
+      <button data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" class="btn btn-outline-success"
+        (click)="clickCreate()">Create</button>
+      <button type="button" class="btn btn-outline-danger mx-3" (click)="logOut()">Logout</button>
+    </div>
+  </div>
+</nav>
+
+<table class="table mt-3">
+  <thead>
+    <tr>
+      <th scope="col" style="text-align: center;">Employee Id</th>
+      <th scope="col" style="text-align: center;">Name</th>
+      <th scope="col"style="text-align: center;">Module</th>
+      <th scope="col"style="text-align: center;">Email</th>
+      <th scope="col"style="text-align: center;">Mobile</th>
+      <th scope="col"style="text-align: center;">Salary</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let e of employeeData  | paginate: { itemsPerPage: itemsPerPage, currentPage: page }">
+      <td style="text-align: center;">{{e.id}}</td>
+      <td  style="text-align: center;">{{e.name}}</td>
+      <td style="text-align: center;">{{e.module}}</td>
+      <td style="text-align: center;">{{e.email}}</td>
+      <td style="text-align: center;">{{e.mobile}}</td>
+      <td style="text-align: center;">{{e.salary}}</td>
+
+      <!-- <td>1</td>
+            <td>Satya</td>
+            <td>Angular</td>
+            <td>satya@gmail.com</td>
+            <td>10,000</td> -->
+
+      <td>
+        <i style="color: skyblue;" class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#exampleModal"
+          (click)="onEditEmp(e)"></i>
+        <i type="bootstrap-icons" style="color: red;" class="bi bi-trash3 mx-3" (click)="deleteEmployee(e)"></i>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<nav class="Page navigation example">  
+    <pagination-controls class="d-flex justify-content-center"(pageChange)="page = $event"></pagination-controls>
+</nav>
+
+
+<!-- <nav class="d-flex justify-content-center mt-3">
+  <ul class="pagination">
+    <li class="page-item" [class.disabled]="page === 1">
+      <a class="page-link" (click)="page > 1 && onPageChange(page - 1)">Previous</a>
+    </li>
+    <li class="page-item" *ngFor="let p of [].constructor(totalPages); let i = index" [class.active]="page === i + 1">
+      <a class="page-link" (click)="onPageChange(i + 1)">{{ i + 1 }}</a>
+    </li>
+    <li class="page-item" [class.disabled]="page === totalPages">
+      <a class="page-link" (click)="page < totalPages && onPageChange(page + 1)">Next</a>
+    </li>
+  </ul>
+</nav> -->
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Employee Details</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="diverseForm">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Name</label>
+            <input type="text" formControlName="name" class="form-control" id="exampleInputEmail1"
+              aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Module</label>
+            <input type="text" formControlName="module" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Email</label>
+            <input type="email" formControlName="email" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Mobile</label>
+            <input type="text" formControlName="mobile" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Salary</label>
+            <input type="text" formControlName="salary" class="form-control" id="exampleInputPassword1">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" *ngIf="showCreate" class="btn btn-primary" (click)="postEmployeeDetails()">Add</button>
+        <button type="button" *ngIf="showUpdate" class="btn btn-primary"
+          (click)="updateEmployeeDetails()">Update</button>
+
+      </div>
+    </div>
+  </div>
+</div>
