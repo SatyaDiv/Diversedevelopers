@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
     private http: HttpClient,
     private router: Router,
-    private apiservice:ApiService
+    private apiservice: ApiService
   ) { }
 
   ngOnInit(): void {
@@ -30,10 +30,15 @@ export class LoginComponent implements OnInit {
     this.http.get<any>("http://localhost:3000/signUpUsers")
       .subscribe(response => {
         const user = response.find((a: any) => {
+          const email = this.myForm.get('email')?.value;
+          const password = this.myForm.get('password')?.value;
+          localStorage.setItem('email', email);
+          localStorage.setItem('pass', password)
           return a.email === this.myForm.value.email && a.password === this.myForm.value.password
+
         });
         if (user) {
-          // alert("Login Success");
+          alert("Login Success");
           this.myForm.reset();
           this.router.navigate(['/home'])
         } else {
@@ -42,16 +47,6 @@ export class LoginComponent implements OnInit {
       }, error => {
         alert("Something went wrong..")
       })
-
-      if(this.myForm.valid) {
-        const email = this.myForm.get('email')?.value;
-      const password = this.myForm.get('password')?.value;
-      localStorage.setItem('email', email);
-      localStorage.setItem('pass',password)
-      console.log(this.myForm.value);
-      this.router.navigate(['/home'])
-      }
-
   }
 
 }

@@ -27,19 +27,18 @@
       "email": "4883478347",
       "password": "fhisdfhbhb",
       "mobilenumber": 8557575785
+    },
+    {
+      "id": "d75f",
+      "fullname": "Achyut Raghuvanshi",
+      "email": "achyutdot@gmail.com",
+      "password": "12345678",
+      "mobilenumber": 8707812541
     }
   ],
   "posts": [
     {
-      "id": 1,
-      "name": "Sanjay ",
-      "module": "Angular",
-      "email": "sanjay@gmail.com",
-      "mobile": "8708269787",
-      "salary": "45000"
-    },
-    {
-      "id": 2,
+      "id": "2",
       "name": "Govind",
       "module": "Angular",
       "email": "govind@gmail.com",
@@ -47,7 +46,7 @@
       "salary": "15000"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Achyut",
       "module": "Angular",
       "email": "achyut@gmail.com",
@@ -55,7 +54,7 @@
       "salary": "15000"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Satya Sai Praneeth",
       "module": "Angular",
       "email": "satya@gmail.com",
@@ -63,7 +62,7 @@
       "salary": "15000"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Shubham",
       "module": ".NET",
       "email": "shubham@gmail.com",
@@ -71,7 +70,7 @@
       "salary": "50000"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Kapil",
       "module": "Angular",
       "email": "kapil@gmail.com",
@@ -79,7 +78,7 @@
       "salary": "35000"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Vishal",
       "module": "Angular",
       "email": "vishal@gmail.com",
@@ -87,7 +86,7 @@
       "salary": "35000"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Uday",
       "module": ".NET",
       "email": "uday@gmail.com",
@@ -95,12 +94,20 @@
       "salary": "35000"
     },
     {
-      "id": 9,
-      "name": "Kajal",
-      "module": ".NET",
-      "email": "kajal@gmail.com",
-      "mobile": "9478793797",
-      "salary": "15000"
+      "id": 1,
+      "name": "Sanjay",
+      "module": "Angular",
+      "email": "sanjay@gmail.com",
+      "mobile": "8769676974",
+      "salary": "45000"
+    },
+    {
+      "id": 1,
+      "name": null,
+      "module": null,
+      "email": null,
+      "mobile": null,
+      "salary": null
     }
   ]
 }

@@ -2,9 +2,9 @@
   <div class="container-fluid">
     <h1 class="bold-input" style="color: red;">Diverse Developers</h1>
     <div class="d-flex">
-      <button data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" class="btn btn-outline-success"
+      <button data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" class="btn btn-success"
         (click)="clickCreate()">Create</button>
-      <button type="button" class="btn btn-outline-danger mx-3" (click)="logOut()">Logout</button>
+      <button type="button" class="btn btn-danger mx-3" (click)="logOut()">Logout</button>
     </div>
   </div>
 </nav>
@@ -45,12 +45,12 @@
   </tbody>
 </table>
 
-<nav class="Page navigation example">  
+<!-- <nav class="Page navigation example">  
     <pagination-controls class="d-flex justify-content-center"(pageChange)="page = $event"></pagination-controls>
-</nav>
+</nav> -->
 
 
-<!-- <nav class="d-flex justify-content-center mt-3">
+<nav class="d-flex justify-content-center mt-3">
   <ul class="pagination">
     <li class="page-item" [class.disabled]="page === 1">
       <a class="page-link" (click)="page > 1 && onPageChange(page - 1)">Previous</a>
@@ -62,7 +62,7 @@
       <a class="page-link" (click)="page < totalPages && onPageChange(page + 1)">Next</a>
     </li>
   </ul>
-</nav> -->
+</nav>
 
 
 

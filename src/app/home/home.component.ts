@@ -15,14 +15,14 @@ export class HomeComponent implements OnInit {
   employeeModObj: EmployeeModel = new EmployeeModel();
   employeeData: any;
   showCreate!: boolean;
-  showUpdate!:boolean;
+  showUpdate!: boolean;
   isEdit: boolean = false;
   highestId: number = 0;
-  page: number = 1; 
+  page: number = 1;
   itemsPerPage: number = 4;
   totalPages: number = 0;
   paginatedEmployeeData: any[] = [];
- 
+
 
 
   constructor(private formBuilder: FormBuilder,
@@ -45,13 +45,14 @@ export class HomeComponent implements OnInit {
 
   clickCreate() {
     this.diverseForm.reset();
-    this.showCreate=true;
-    this.showUpdate=false
+    this.showCreate = true;
+    this.showUpdate = false
   }
 
   logOut() {
-    localStorage.clear()
+    localStorage.clear();
     this.router.navigate(['/login'])
+
   }
 
   postEmployeeDetails() {
@@ -60,7 +61,7 @@ export class HomeComponent implements OnInit {
       this.highestId++;
       this.employeeModObj.id = this.highestId;
     }
-    
+
     this.employeeModObj.name = this.diverseForm.value.name;
     this.employeeModObj.module = this.diverseForm.value.module;
     this.employeeModObj.email = this.diverseForm.value.email;
@@ -85,7 +86,7 @@ export class HomeComponent implements OnInit {
       .subscribe(response => {
         this.employeeData = response
         this.totalPages = Math.ceil(this.employeeData.length / this.itemsPerPage);
-      this.updatePaginatedData();
+        this.updatePaginatedData();
       })
   }
 
@@ -97,10 +98,10 @@ export class HomeComponent implements OnInit {
       })
   }
 
-  onEditEmp(e:any) {
-    this.showCreate=false;
-    this.showUpdate=true;
-    this.employeeModObj.id=e.id;
+  onEditEmp(e: any) {
+    this.showCreate = false;
+    this.showUpdate = true;
+    this.employeeModObj.id = e.id;
     this.diverseForm.controls['name'].setValue(e.name)
     this.diverseForm.controls['module'].setValue(e.module)
     this.diverseForm.controls['email'].setValue(e.email)
@@ -115,14 +116,14 @@ export class HomeComponent implements OnInit {
     this.employeeModObj.email = this.diverseForm.value.email;
     this.employeeModObj.mobile = this.diverseForm.value.mobile;
     this.employeeModObj.salary = this.diverseForm.value.salary;
-    this.apiService.updateEmployee(this.employeeModObj,this.employeeModObj.id)
-    .subscribe(response => {
-      alert("Employee data updated")
-      let reference = document.getElementById("cancel")
-      reference?.click();
-      this.diverseForm.reset();
-      this.getAllEmployee()
-    })
+    this.apiService.updateEmployee(this.employeeModObj, this.employeeModObj.id)
+      .subscribe(response => {
+        alert("Employee data updated")
+        let reference = document.getElementById("cancel")
+        reference?.click();
+        this.diverseForm.reset();
+        this.getAllEmployee()
+      })
   }
 
   updatePaginatedData() {
@@ -136,6 +137,6 @@ export class HomeComponent implements OnInit {
   }
 
 
- 
+
 
 }
